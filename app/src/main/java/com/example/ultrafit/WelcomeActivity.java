@@ -1,18 +1,42 @@
 package com.example.ultrafit;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 
+import java.io.IOException;
+
 public class WelcomeActivity extends AppCompatActivity {
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
-        toRegisterActivity();
+        try {
+            checkSavedData();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    public void checkSavedData() throws IOException, ClassNotFoundException {
+        User tempUser = (User)DataHandler.loadData(getApplicationContext());
+        System.out.println("xDD");
+        if(true){
+            toRegisterActivity();
+        }
+        else{
+            toMainActivity();
+        }
+        System.out.println(":0");
     }
 
     public Runnable redirectToActivityAfterDelay(Class<?> cls){

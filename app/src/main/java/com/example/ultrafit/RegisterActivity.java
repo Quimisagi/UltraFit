@@ -2,10 +2,13 @@ package com.example.ultrafit;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.RadioGroup;
+
+import java.io.IOException;
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -15,7 +18,7 @@ public class RegisterActivity extends AppCompatActivity {
         setContentView(R.layout.activity_register);
     }
 
-    public void onAccept(View view){
+    public void onAccept(View view) throws IOException {
         EditText nameEdit = (EditText)findViewById(R.id.name);
         EditText ageEdit = (EditText)findViewById(R.id.age);
         EditText statureEdit = (EditText)findViewById(R.id.stature);
@@ -35,7 +38,10 @@ public class RegisterActivity extends AppCompatActivity {
         tempUser.setWeight(weight);
         tempUser.setObjective(buttonID);
 
+        DataHandler.saveData(getApplicationContext(), tempUser);
 
+        final Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
 
     }
 }
