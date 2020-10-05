@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">UltraFit</string>
+    <string name="title_statics">Estadística</string>
+    <string name="title_exercises">Rutinas</string>
+    <string name="title_user">Usuario</string>
+    <string name="welcome">Bienvenido</string>
+    <string name="pleaseRegister">Ingrese sus datos</string>
+    <string name="name">Nombre</string>
+    <string name="age">Edad</string>
+    <string name="stature">Estatura</string>
+    <string name="weight">Peso</string>
+    <string name="objective">Objetivo</string>
+    <string name="adelgazar">Adelgazar</string>
+    <string name="tonificar">Tonificar</string>
+    <string name="accept">Aceptar</string>
+</resources>
