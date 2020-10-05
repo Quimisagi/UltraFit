@@ -29,14 +29,13 @@ public class WelcomeActivity extends AppCompatActivity {
     @RequiresApi(api = Build.VERSION_CODES.O)
     public void checkSavedData() throws IOException, ClassNotFoundException {
         User tempUser = (User)DataHandler.loadData(getApplicationContext());
-        System.out.println("xDD");
-        if(true){
+        System.out.println(tempUser.getName());
+        if(tempUser != null){
             toRegisterActivity();
         }
         else{
             toMainActivity();
         }
-        System.out.println(":0");
     }
 
     public Runnable redirectToActivityAfterDelay(Class<?> cls){

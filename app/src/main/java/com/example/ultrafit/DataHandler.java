@@ -11,9 +11,11 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.nio.file.Files;
+import java.nio.file.Paths;
 
 public class DataHandler {
 
@@ -26,11 +28,21 @@ public class DataHandler {
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     public static Object loadData(Context applicationContext) throws IOException, ClassNotFoundException {
-        File file = new File("userData.txt");
-        byte[] fileContent = Files.readAllBytes(file.toPath());
+        InputStream inputStream = applicationContext.openFileInput("userData.txt");
+        byte[] fileContent = readBytes(inputStream);
 
         return toObject(fileContent);
 
+    }
+
+    public static byte[] readBytes(InputStream inputStream) throws IOException {
+        byte[] b = new byte[1024];
+        ByteArrayOutputStream os = new ByteArrayOutputStream();
+        int c;
+        while ((c = inputStream.read(b)) != -1) {
+            os.write(b, 0, c);
+        }
+        return os.toByteArray();
     }
     public static byte[] toByteArray(Object obj) throws IOException {
         byte[] bytes = null;
