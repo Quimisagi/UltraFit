@@ -12,30 +12,39 @@ import java.io.IOException;
 
 public class WelcomeActivity extends AppCompatActivity {
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
+        User tempUser = User.getInstance();
         try {
-            checkSavedData();
+            tempUser = (User)DataHandler.loadData(getApplicationContext());
         } catch (IOException e) {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
+        checkSavedData(tempUser);
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
-    public void checkSavedData() throws IOException, ClassNotFoundException {
-        User tempUser = (User)DataHandler.loadData(getApplicationContext());
-        System.out.println(tempUser.getName());
-        if(tempUser != null){
+    public void checkSavedData(User tempUser){
+
+        if(tempUser.getName() == ""){
             toRegisterActivity();
         }
         else{
+            loadUserData(tempUser);
             toMainActivity();
         }
+    }
+
+    public void loadUserData(User tempUser){
+        User user = User.getInstance();
+        user.setName(tempUser.getName());
+        user.setAge(tempUser.getAge());
+        user.setStature(tempUser.getStature());
+        user.setWeight(tempUser.getWeight());
+        user.setObjective(tempUser.getObjective());
     }
 
     public Runnable redirectToActivityAfterDelay(Class<?> cls){

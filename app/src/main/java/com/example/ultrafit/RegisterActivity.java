@@ -16,6 +16,10 @@ public class RegisterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+        if(User.getInstance().getName() != ""){
+            updateFields(User.getInstance());
+        }
+
     }
 
     public void onAccept(View view) throws IOException {
@@ -30,18 +34,29 @@ public class RegisterActivity extends AppCompatActivity {
         int stature = Integer.parseInt(statureEdit.getText().toString());
         int weight = Integer.parseInt(weightEdit.getText().toString());
         int buttonID = radioGroup.getCheckedRadioButtonId();
+        View radioButton = radioGroup.findViewById(buttonID);
+        int index = radioGroup.indexOfChild(radioButton);
 
         User tempUser = User.getInstance();
         tempUser.setName(name);
         tempUser.setAge(age);
         tempUser.setStature(stature);
         tempUser.setWeight(weight);
-        tempUser.setObjective(buttonID);
+        tempUser.setObjective(index);
 
         DataHandler.saveData(getApplicationContext(), tempUser);
 
         final Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
+    }
 
+    public void updateFields(User tempUser){
+        ((EditText)findViewById(R.id.name)).setText(tempUser.getName());
+        ((EditText)findViewById(R.id.age)).setText(String.valueOf(tempUser.getAge()));
+        ((EditText)findViewById(R.id.stature)).setText(String.valueOf(tempUser.getStature()));
+        ((EditText)findViewById(R.id.weight)).setText(String.valueOf(tempUser.getWeight()));
+
+        RadioGroup radioGroup = (RadioGroup)findViewById(R.id.radioGroup_objective);
+        radioGroup.check(radioGroup.getChildAt(tempUser.getObjective()).getId());
     }
 }

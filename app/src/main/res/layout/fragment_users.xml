@@ -7,10 +7,10 @@
     tools:context=".ui.notifications.NotificationsFragment">
 
     <LinearLayout
-        android:layout_width="360dp"
-        android:layout_height="680dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginBottom="1dp"
+        android:layout_width="340dp"
+        android:layout_height="650dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="16dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -19,15 +19,15 @@
         app:layout_constraintVertical_bias="0.51">
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/edit_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Button" />
+            android:text="Perfil" />
 
         <Button
             android:id="@+id/button3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Button" />
+            android:text="Notificación" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

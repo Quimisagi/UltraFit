@@ -29,29 +29,33 @@
             android:id="@+id/name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:hint="@string/name"
             android:inputType="text"
-            android:hint="@string/name" />
+            android:maxLength="10" />
 
         <EditText
             android:id="@+id/age"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:hint="@string/age"
             android:inputType="number"
-            android:hint="@string/age" />
+            android:maxLength="2" />
 
         <EditText
             android:id="@+id/stature"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:hint="@string/stature"
             android:inputType="number"
-            android:hint="@string/stature" />
+            android:maxLength="3" />
 
         <EditText
             android:id="@+id/weight"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:hint="@string/weight"
             android:inputType="number"
-            android:hint="@string/weight" />
+            android:maxLength="3" />
 
         <TextView
             android:id="@+id/textView4"
@@ -62,7 +66,7 @@
         <RadioGroup
             android:id="@+id/radioGroup_objective"
             android:layout_width="match_parent"
-            android:layout_height="167dp">
+            android:layout_height="101dp">
 
             <RadioButton
                 android:id="@+id/radioButton2"
@@ -74,7 +78,7 @@
                 android:id="@+id/radioButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/adelgazar" />
+                android:text="@string/tonificar" />
         </RadioGroup>
 
         <Button
@@ -83,7 +87,7 @@
             android:layout_height="wrap_content"
             android:inputType="number"
             android:onClick="onAccept"
-            android:text="Button" />
+            android:text="@string/accept" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

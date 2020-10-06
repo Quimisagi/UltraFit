@@ -26,7 +26,6 @@ public class DataHandler {
         outputStream.close();
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
     public static Object loadData(Context applicationContext) throws IOException, ClassNotFoundException {
         InputStream inputStream = applicationContext.openFileInput("userData.txt");
         byte[] fileContent = readBytes(inputStream);
