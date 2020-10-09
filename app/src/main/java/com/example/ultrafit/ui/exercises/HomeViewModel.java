@@ -1,4 +1,4 @@
-package com.example.ultrafit.ui.home;
+package com.example.ultrafit.ui.exercises;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;

@@ -1,4 +1,4 @@
-package com.example.ultrafit.ui.notifications;
+package com.example.ultrafit.ui.user;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
