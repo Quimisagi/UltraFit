@@ -41,12 +41,15 @@ public class ObjectivesHandler {
     public void createPiernasRoutine(){
         Routine piernas = new Routine("Piernas", new ArrayList<Exercise>());
         piernas.addExercise(GlobalExercisesList.getInstance().get("Lagartijas"));
+        piernas.addExercise(GlobalExercisesList.getInstance().get("Quesadillas"));
+        piernas.addExercise(GlobalExercisesList.getInstance().get("Flexiones"));
         tonificarObjective.add(piernas);
     }
 
     public void createAbdomenRoutine(){
         Routine lagartijas = new Routine("Abdomen", new ArrayList<Exercise>());
         lagartijas.addExercise(GlobalExercisesList.getInstance().get("Lagartijas"));
+        lagartijas.addExercise(GlobalExercisesList.getInstance().get("Flexiones"));
         tonificarObjective.add(lagartijas);
     }
 

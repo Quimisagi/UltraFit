@@ -24,6 +24,10 @@ public class GlobalExercisesList {
         exercisesHash.put("Lagartijas", lagartijas);
         Exercise sentadillas = new Exercise("Sentadillas", "", false, 0, 10);
         exercisesHash.put("Sentadillas", sentadillas);
+        Exercise quesadillas = new Exercise("Quesadillas", "", false, 0, 10);
+        exercisesHash.put("Quesadillas", quesadillas);
+        Exercise flexiones = new Exercise("Flexiones", "", false, 0, 10);
+        exercisesHash.put("Flexiones", flexiones);
     }
 
 }
