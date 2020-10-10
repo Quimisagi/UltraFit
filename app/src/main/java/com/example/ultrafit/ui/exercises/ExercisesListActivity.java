@@ -3,6 +3,7 @@ package com.example.ultrafit.ui.exercises;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.example.ultrafit.ExerciseActivity;
 import com.example.ultrafit.ObjectivesHandler;
 import com.example.ultrafit.Routine;
 import com.example.ultrafit.User;
@@ -50,6 +51,13 @@ public class ExercisesListActivity extends AppCompatActivity {
         text.setText(exerciseName);
 
         layout.addView(text);
+    }
+
+    public void onEmpezar(View view){
+        Intent intent = new Intent();
+        intent.putExtra("routine", routine);
+        intent.setClass(this, ExerciseActivity.class);
+        startActivity(intent);
     }
 
 }

@@ -73,12 +73,9 @@ public class ExercisesFragment extends Fragment {
                                     @Override
                                     public void onClick(View v) {
                                         Intent intent = new Intent();
-                                        System.out.println("D");
                                         intent.putExtra("routine", routine);
                                         intent.setClass(getActivity(), ExercisesListActivity.class);
-                                        System.out.println("C");
                                         getActivity().startActivity(intent);
-                                        System.out.println("E");
                                     }
                                 });
         layout.addView(btnTag);
