@@ -22,12 +22,19 @@
             android:id="@+id/edit_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="@color/colorText"
+            android:background="@color/colorTextEdit"
+
             android:text="Perfil" />
 
         <Button
             android:id="@+id/button3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="@color/colorText"
+            android:background="@color/colorTextEdit"
+            android:layout_marginTop="5dp"
+
             android:text="Notificación" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

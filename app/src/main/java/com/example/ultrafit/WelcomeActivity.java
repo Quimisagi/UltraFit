@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.View;
 
 import java.io.IOException;
 
@@ -29,12 +30,9 @@ public class WelcomeActivity extends AppCompatActivity {
 
     public void checkSavedData(User tempUser){
 
-        if(tempUser.getName() == ""){
-            toRegisterActivity();
-        }
-        else{
-            loadUserData(tempUser);
+        if(tempUser.getName() != ""){
             toMainActivity();
+            loadUserData(tempUser);
         }
     }
 
@@ -47,25 +45,13 @@ public class WelcomeActivity extends AppCompatActivity {
         user.setObjective(tempUser.getObjective());
     }
 
-    public Runnable redirectToActivityAfterDelay(Class<?> cls){
-        final Intent intent = new Intent(this, cls);
-        Runnable r = new Runnable() {
-
-            @Override
-            public void run() {
-                startActivity(intent);
-            }
-        };
-        return r;
-    }
-
-    public void toRegisterActivity(){
-        Handler h = new Handler();
-        h.postDelayed(redirectToActivityAfterDelay(RegisterActivity.class), 2000);
+    public void toRegisterActivity(View view){
+        Intent intent = new Intent(this, RegisterActivity.class);
+        startActivity(intent);
     }
 
     public void toMainActivity(){
-        Handler h = new Handler();
-        h.postDelayed(redirectToActivityAfterDelay(MainActivity.class), 2000);
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 }

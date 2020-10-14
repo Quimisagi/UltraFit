@@ -21,6 +21,7 @@ import androidx.lifecycle.ViewModelProviders;
 import com.example.ultrafit.R;
 import com.example.ultrafit.User;
 
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -66,8 +67,9 @@ public class ExercisesFragment extends Fragment {
         LinearLayout layout = (LinearLayout) view.findViewById(R.id.main_layout);
 
         final Button btnTag = new Button(this.getContext());
-        btnTag.setText(routine.getName());
         btnTag.setId(id);
+        btnTag.setBackgroundResource(getResId(routine.getResourceId(), R.drawable.class));
+        btnTag.setHeight(400);
 
         btnTag.setOnClickListener(new View.OnClickListener() {
                                     @Override
@@ -79,6 +81,17 @@ public class ExercisesFragment extends Fragment {
                                     }
                                 });
         layout.addView(btnTag);
+    }
+
+    public static int getResId(String resName, Class<?> c) {
+
+        try {
+            Field idField = c.getDeclaredField(resName);
+            return idField.getInt(idField);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return -1;
+        }
     }
 
 

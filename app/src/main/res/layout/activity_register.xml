@@ -3,7 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+
     android:layout_height="match_parent"
+    android:background="@color/colorBackground"
     tools:context=".RegisterActivity">
 
     <LinearLayout
@@ -23,36 +25,52 @@
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="101dp"
+            android:textColor="@color/colorText"
             android:text="@string/pleaseRegister" />
 
         <EditText
             android:id="@+id/name"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:hint="@string/name"
             android:inputType="text"
+            android:textColorHint="@color/colorText"
+            android:textColor="@color/colorText"
+            android:background="@color/colorTextEdit"
             android:maxLength="10" />
 
         <EditText
             android:id="@+id/age"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:hint="@string/age"
             android:inputType="number"
+            android:textColorHint="@color/colorText"
+            android:textColor="@color/colorText"
+            android:background="@color/colorTextEdit"
+            android:layout_marginTop="5dp"
             android:maxLength="2" />
 
         <EditText
             android:id="@+id/stature"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:hint="@string/stature"
             android:inputType="number"
+            android:textColorHint="@color/colorText"
+            android:textColor="@color/colorText"
+            android:background="@color/colorTextEdit"
+            android:layout_marginTop="5dp"
             android:maxLength="3" />
 
         <EditText
             android:id="@+id/weight"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
+            android:textColorHint="@color/colorText"
+            android:textColor="@color/colorText"
+            android:background="@color/colorTextEdit"
+            android:layout_marginTop="5dp"
             android:hint="@string/weight"
             android:inputType="number"
             android:maxLength="3" />
@@ -60,12 +78,16 @@
         <TextView
             android:id="@+id/textView4"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
+            android:textColorHint="@color/colorText"
+            android:textColor="@color/colorText"
+            android:layout_marginTop="5dp"
             android:text="@string/objective" />
 
         <RadioGroup
             android:id="@+id/radioGroup_objective"
             android:layout_width="match_parent"
+
             android:layout_height="101dp">
 
             <RadioButton
@@ -84,8 +106,9 @@
         <Button
             android:id="@+id/button"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="number"
+            android:layout_height="40dp"
+            android:background="@drawable/button_shape"
+            style="@style/buttonStyle"
             android:onClick="onAccept"
             android:text="@string/accept" />
 

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import com.example.ultrafit.ExerciseActivity;
+import com.example.ultrafit.ExerciseDisplayLayout;
 import com.example.ultrafit.ObjectivesHandler;
 import com.example.ultrafit.Routine;
 import com.example.ultrafit.User;
@@ -47,8 +48,14 @@ public class ExercisesListActivity extends AppCompatActivity {
 
         LinearLayout layout = (LinearLayout) findViewById(R.id.main_layout);
 
+        //ExerciseDisplayLayout prueba = new ExerciseDisplayLayout(this);
+
         TextView text = new TextView(this);
         text.setText(exerciseName);
+        text.setTextColor(getResources().getColor(R.color.colorText));
+        text.setTextSize(20);
+
+
 
         layout.addView(text);
     }
