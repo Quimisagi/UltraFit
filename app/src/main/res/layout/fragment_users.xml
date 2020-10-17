@@ -27,14 +27,11 @@
 
             android:text="Perfil" />
 
-        <Button
-            android:id="@+id/button3"
+        <Switch
+            android:id="@+id/notifications"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="@color/colorText"
-            android:background="@color/colorTextEdit"
-            android:layout_marginTop="5dp"
+            android:layout_height="46dp"
+            android:text="Switch" />
 
-            android:text="Notificación" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
