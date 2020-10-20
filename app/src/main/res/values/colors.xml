@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimary">#ff0090</color>
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
     <color name="colorBackground"> 	#1b1c28 </color>
     <color name="colorText">#EDEDED</color>
     <color name="buttonColor"></color>
     <color name="colorTextEdit">#080715</color>
+    <color name="colorDimIcon">#959595</color>
+    <color name ="verdeBonito">#1de2a4</color>
+    <color name = "moradito">#610099</color>
 
 
 </resources>

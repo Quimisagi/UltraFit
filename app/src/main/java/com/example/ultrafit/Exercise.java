@@ -9,14 +9,16 @@ public class Exercise implements Serializable {
     int time;
     int repetitions;
     float calories;
+    String description;
 
-    public Exercise(String name, String videoURL, boolean hasLimitTime, int time, int repetitions, float calories) {
+    public Exercise(String name, String videoURL, boolean hasLimitTime, int time, int repetitions, float calories, String description) {
         this.name = name;
         this.videoURL = videoURL;
         this.hasLimitTime = hasLimitTime;
         this.time = time;
         this.repetitions = repetitions;
         this.calories = calories;
+        this.description = description;
     }
 
     public String getName() {
@@ -65,5 +67,13 @@ public class Exercise implements Serializable {
 
     public void setCalories(float calories) {
         this.calories = calories;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

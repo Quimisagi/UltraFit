@@ -6,21 +6,41 @@
     android:layout_height="match_parent"
     tools:context=".ui.dashboard.DashboardFragment">
 
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="19dp"
+        android:fontFamily="@font/nunito"
+        android:text="Desempeño"
+        android:textAlignment="center"
+        android:textColor="@color/colorText"
+        android:textSize="25dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <LinearLayout
-        android:layout_width="375dp"
-        android:layout_height="650dp"
+        android:id="@+id/linearLayout2"
+        android:layout_width="373dp"
+        android:layout_height="575dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintVertical_bias="0.47000003">
 
         <CalendarView
             android:id="@+id/calendarView"
             android:layout_width="match_parent"
             android:layout_height="310dp"
-            android:background="#FFF" />
+            android:background="@color/colorTextEdit"
+            android:dateTextAppearance="@style/CalenderViewDateCustomText"
+            android:theme="@style/CalenderViewCustom"
+            android:weekDayTextAppearance="@style/CalenderViewWeekCustomText" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/notFoundLayout"
@@ -48,60 +68,90 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/calories"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="TextView"
-                android:textColor="@color/colorText"
-                android:textSize="15dp"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/caloriesLayout"
+                android:layout_width="180dp"
+                android:layout_height="150dp"
+                android:layout_marginBottom="80dp"
+                android:background="@drawable/shape_moradito"
+                android:orientation="vertical"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.723"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.653" />
+                app:layout_constraintStart_toEndOf="@+id/timeLayout"
+                app:layout_constraintTop_toTopOf="parent">
 
-            <TextView
-                android:id="@+id/calories2"
-                android:layout_width="108dp"
-                android:layout_height="22dp"
-                android:text="Calorías"
-                android:textColor="@color/colorText"
-                android:textSize="15dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.152"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.65" />
+                <TextView
+                    android:id="@+id/calories2"
+                    android:layout_width="108dp"
+                    android:layout_height="22dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/nunito"
+                    android:text="Calorías"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorText"
+                    android:textSize="15dp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/calories3"
-                android:layout_width="108dp"
-                android:layout_height="22dp"
-                android:text="Tiempo"
-                android:textColor="@color/colorText"
-                android:textSize="15dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.153"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.496" />
+                <TextView
+                    android:id="@+id/calories"
+                    android:layout_width="wrap_content"
+                    android:layout_height="34dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="TextView"
+                    android:textColor="@color/colorText"
+                    android:textSize="25dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/calories2"
+                    app:layout_constraintVertical_bias="0.41000003" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <TextView
-                android:id="@+id/time"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="TextView"
-                android:textColor="@color/colorText"
-                android:textSize="15dp"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/timeLayout"
+                android:layout_width="180dp"
+                android:layout_height="150dp"
+                android:layout_marginBottom="80dp"
+                android:background="@drawable/shape_verde_bonito"
+                android:orientation="vertical"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.726"
+                app:layout_constraintEnd_toStartOf="@+id/caloriesLayout"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/time2"
+                    android:layout_width="108dp"
+                    android:layout_height="22dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/nunito"
+                    android:text="Tiempo"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorText"
+                    android:textSize="15dp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="TextView"
+                    android:textColor="@color/colorText"
+                    android:textSize="25dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/time2"
+                    app:layout_constraintVertical_bias="0.41000003" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </LinearLayout>

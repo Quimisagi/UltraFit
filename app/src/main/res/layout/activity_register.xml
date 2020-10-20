@@ -34,7 +34,7 @@
             android:layout_height="50dp"
             android:hint="@string/name"
             android:inputType="text"
-            android:textColorHint="@color/colorText"
+            android:textColorHint="@color/colorDimIcon"
             android:textColor="@color/colorText"
             android:background="@color/colorTextEdit"
             android:maxLength="10" />
@@ -45,7 +45,7 @@
             android:layout_height="50dp"
             android:hint="@string/age"
             android:inputType="number"
-            android:textColorHint="@color/colorText"
+            android:textColorHint="@color/colorDimIcon"
             android:textColor="@color/colorText"
             android:background="@color/colorTextEdit"
             android:layout_marginTop="5dp"
@@ -57,7 +57,7 @@
             android:layout_height="50dp"
             android:hint="@string/stature"
             android:inputType="number"
-            android:textColorHint="@color/colorText"
+            android:textColorHint="@color/colorDimIcon"
             android:textColor="@color/colorText"
             android:background="@color/colorTextEdit"
             android:layout_marginTop="5dp"
@@ -67,7 +67,7 @@
             android:id="@+id/weight"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:textColorHint="@color/colorText"
+            android:textColorHint="@color/colorDimIcon"
             android:textColor="@color/colorText"
             android:background="@color/colorTextEdit"
             android:layout_marginTop="5dp"
@@ -94,10 +94,14 @@
                 android:id="@+id/radioButton2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="@color/colorText"
+                android:buttonTint="@color/colorPrimary"
                 android:text="@string/adelgazar" />
 
             <RadioButton
                 android:id="@+id/radioButton"
+                android:textColor="@color/colorText"
+                android:buttonTint="@color/colorPrimary"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/tonificar" />

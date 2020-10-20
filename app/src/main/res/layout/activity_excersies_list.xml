@@ -25,9 +25,11 @@
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="40dp"
-        android:onClick="onEmpezar"
         android:background="@drawable/button_shape"
+        android:fontFamily="@font/roboto_medium"
+        android:onClick="onEmpezar"
         android:text="Empezar"
+        android:textColor="@color/colorText"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

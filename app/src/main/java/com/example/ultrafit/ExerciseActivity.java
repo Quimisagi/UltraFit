@@ -41,6 +41,8 @@ public class ExerciseActivity extends AppCompatActivity {
         boolean timer = routine.getExerciseLists().get(index).isHasLimitTime();
         int time = routine.getExerciseLists().get(index).getTime();
         int reps  = routine.getExerciseLists().get(index).getRepetitions();
+        String desc = routine.getExerciseLists().get(index).getDescription();
+        ((TextView)findViewById(R.id.description)).setText(desc);
         String videoName = routine.getExerciseLists().get(index).getVideoURL();
         chooseTimerOrReps(timer, time, reps);
         index++;
@@ -62,6 +64,7 @@ public class ExerciseActivity extends AppCompatActivity {
 
         final Handler handler= new Handler();
         handler.post(new Runnable() {
+            @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
             public void run() {
                 if(running){
@@ -105,6 +108,8 @@ public class ExerciseActivity extends AppCompatActivity {
     @RequiresApi(api = Build.VERSION_CODES.N)
     public void seguir(){
         if(index < routine.getExerciseLists().size()){
+            String desc = routine.getExerciseLists().get(index).getDescription();
+            ((TextView)findViewById(R.id.description)).setText(desc);
             ((TextView)findViewById(R.id.exercise_title)).setText(routine.getExerciseLists().get(index).getName());
             String videoName = routine.getExerciseLists().get(index).getVideoURL();
             VideoView videoView = findViewById(R.id.videoView);

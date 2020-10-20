@@ -54,9 +54,11 @@ public class DashboardFragment extends Fragment {
         DateRecord dateRecord = RecordHandler.getInstance().getRecordOfDate(year, month, day);
         if(dateRecord == null){
             view.findViewById(R.id.notFoundLayout).setVisibility(View.VISIBLE);
+            view.findViewById(R.id.recordLayout).setVisibility(View.GONE);
         }
         else{
             view.findViewById(R.id.notFoundLayout).setVisibility(View.GONE);
+            view.findViewById(R.id.recordLayout).setVisibility(View.VISIBLE);
             int seconds = dateRecord.getTime();
             int minute = (seconds%3600)/60;
             int sec = seconds%60;

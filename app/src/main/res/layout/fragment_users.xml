@@ -6,9 +6,26 @@
     android:layout_height="match_parent"
     tools:context=".ui.user.UserFragment">
 
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="26dp"
+        android:fontFamily="@font/nunito"
+        android:text="Ajustes"
+        android:textAlignment="center"
+        android:textColor="@color/colorText"
+        android:textSize="25dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <LinearLayout
-        android:layout_width="340dp"
-        android:layout_height="650dp"
+        android:id="@+id/linearLayout"
+        android:layout_width="355dp"
+        android:layout_height="477dp"
         android:layout_marginTop="32dp"
         android:layout_marginBottom="16dp"
         android:orientation="vertical"
@@ -22,19 +39,27 @@
             android:id="@+id/edit_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/colorText"
             android:background="@color/colorTextEdit"
-
-            android:text="Perfil" />
+            android:fontFamily="@font/roboto_medium"
+            android:paddingStart="15dp"
+            android:text="Perfil"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
+            android:textColor="@color/colorText" />
 
         <Switch
-            android:layout_marginTop="10dp"
-            android:background="@color/colorTextEdit"
             android:id="@+id/notifications"
             android:layout_width="match_parent"
             android:layout_height="46dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/colorTextEdit"
+
+            android:fontFamily="@font/roboto_medium"
+            android:paddingStart="15dp"
+            android:paddingEnd="10dp"
+            android:text="Notificaciones"
             android:textColor="@color/colorText"
-            android:text="Switch" />
+            android:theme="@style/SCBSwitch" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
