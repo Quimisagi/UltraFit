@@ -10,6 +10,7 @@ import android.os.Handler;
 import android.view.View;
 
 import java.io.IOException;
+import java.util.Hashtable;
 
 public class WelcomeActivity extends AppCompatActivity {
 
@@ -18,14 +19,25 @@ public class WelcomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
         User tempUser = User.getInstance();
+        Hashtable<String, DateRecord> calendarRecord = null;
         try {
-            tempUser = (User)DataHandler.loadData(getApplicationContext());
+            tempUser = (User)DataHandler.loadData(getApplicationContext(), "userData.txt");
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        try {
+            calendarRecord = (Hashtable<String, DateRecord>) DataHandler.loadData(getApplicationContext(), "statics.txt");
         } catch (IOException e) {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
         checkSavedData(tempUser);
+        if(calendarRecord != null){
+            RecordHandler.getInstance().setCalendarRecord(calendarRecord);
+        }
     }
 
     public void checkSavedData(User tempUser){

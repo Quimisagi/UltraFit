@@ -31,21 +31,10 @@ public class Reminder extends BroadcastReceiver {
         }
         NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(context, id).
                 setSmallIcon(R.drawable.ic_notifications_black_24dp).
-                setContentText("this is my notification").
-                setContentTitle("my notificaton");
+                setContentText("¿Ya hiciste ejercicio hoy?").
+                setContentTitle("¡No olvides hacer ejercicios todos los días!");
         NotificationManagerCompat notificationManagerCompat = NotificationManagerCompat.from(context);
         notificationManagerCompat.notify(1000, notificationBuilder.build());
-        /*Intent intent1 = new Intent(context,MainActivity.class);
-        intent1.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        PendingIntent pendingIntent = PendingIntent.getActivity(context,100,intent1,PendingIntent.FLAG_UPDATE_CURRENT);
-        NotificationCompat.Builder builder = new NotificationCompat.Builder(context).
-                setSmallIcon(R.drawable.ic_notifications_black_24dp).
-                setContentIntent(pendingIntent).
-                setContentText("this is my notification").
-                setContentTitle("my notificaton").
-        setAutoCancel(true);
-        notificationManager.notify(100,builder.build());*/
-
     }
 
 }

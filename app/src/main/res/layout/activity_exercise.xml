@@ -9,7 +9,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/container"
-        android:layout_width="375dp"
+        android:layout_width="match_parent"
         android:layout_height="620dp"
         android:layout_marginBottom="60dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -21,28 +21,33 @@
             android:id="@+id/exercise_title"
             android:layout_width="315dp"
             android:layout_height="39dp"
-            android:layout_marginTop="65dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="8dp"
             android:text="TextView"
             android:textAlignment="center"
             android:textColor="@color/colorText"
             android:textSize="25dp"
+            app:layout_constraintBottom_toTopOf="@+id/frameLayout"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
 
         <FrameLayout
-            android:layout_width="290dp"
-            android:layout_height="350dp"
+            android:id="@+id/frameLayout"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.26">
 
-            <ImageView
-                android:id="@+id/imageView"
+            <VideoView
+                android:id="@+id/videoView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:srcCompat="@drawable/exercises" />
+                android:layout_gravity="center" />
         </FrameLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

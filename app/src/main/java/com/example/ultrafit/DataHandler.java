@@ -19,15 +19,15 @@ import java.nio.file.Paths;
 
 public class DataHandler {
 
-    public static void saveData(Context context, Object obj) throws IOException {
-        FileOutputStream outputStream = context.openFileOutput("userData.txt", Context.MODE_PRIVATE);
+    public static void saveData(Context context, Object obj, String fileName) throws IOException {
+        FileOutputStream outputStream = context.openFileOutput(fileName, Context.MODE_PRIVATE);
         byte[] data = toByteArray(obj);
         outputStream.write(data);
         outputStream.close();
     }
 
-    public static Object loadData(Context applicationContext) throws IOException, ClassNotFoundException {
-        InputStream inputStream = applicationContext.openFileInput("userData.txt");
+    public static Object loadData(Context applicationContext, String fileName) throws IOException, ClassNotFoundException {
+        InputStream inputStream = applicationContext.openFileInput(fileName);
         byte[] fileContent = readBytes(inputStream);
 
         return toObject(fileContent);

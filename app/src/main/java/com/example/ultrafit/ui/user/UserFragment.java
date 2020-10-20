@@ -34,6 +34,8 @@ import static androidx.core.content.ContextCompat.getSystemService;
 public class UserFragment extends Fragment implements View.OnClickListener {
 
     private NotificationsViewModel notificationsViewModel;
+    Button editBtn;
+    Switch switchN;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -41,8 +43,8 @@ public class UserFragment extends Fragment implements View.OnClickListener {
                 ViewModelProviders.of(this).get(NotificationsViewModel.class);
         View root = inflater.inflate(R.layout.fragment_users, container, false);
 
-        Button editBtn = (Button)root.findViewById(R.id.edit_button);
-        Switch switchN =root.findViewById(R.id.notifications);
+        editBtn = (Button)root.findViewById(R.id.edit_button);
+        switchN =root.findViewById(R.id.notifications);
 
         editBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,16 +72,29 @@ public class UserFragment extends Fragment implements View.OnClickListener {
     }
 
     public void onNotifications(){
-        /*
-        Calendar calendar = Calendar.getInstance();
-        calendar.set(Calendar.HOUR_OF_DAY,05);
-        calendar.set(Calendar.MINUTE,10);*/
+        if(switchN.isChecked()){
+            activeNotifications();
+        }
+        else{
+            cancelNotifications();
+        }
+
+    }
+
+    public void activeNotifications(){
         Intent intent = new Intent(getContext(), Reminder.class);
         PendingIntent pendingIntent = PendingIntent.getBroadcast(getContext(),0,intent,0);
         AlarmManager alarmManager = (AlarmManager)getActivity().getSystemService(ALARM_SERVICE);
-        long triggerAfter = 100;
-        long triggerEvery = 24 * 60 * 60 * 1000;
+        long triggerAfter = 50;
+        long triggerEvery = 10;
         alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,triggerAfter, triggerEvery,pendingIntent);
+    }
+
+    public void cancelNotifications(){
+        Intent intent = new Intent(getContext(), Reminder.class);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(getContext(),0,intent,0);
+        AlarmManager alarmManager = (AlarmManager)getActivity().getSystemService(ALARM_SERVICE);
+        alarmManager.cancel(pendingIntent);
     }
 
     @RequiresApi(api = Build.VERSION_CODES.O)
@@ -96,8 +111,8 @@ public class UserFragment extends Fragment implements View.OnClickListener {
         }
         NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(getContext(), id).
                 setSmallIcon(R.drawable.ic_notifications_black_24dp).
-                setContentText("this is my notification").
-                setContentTitle("my notificaton");
+                setContentText("¿Ya entrenaste hoy?").
+                setContentTitle("¡No olvides hacer ejercicios todos los días!");
         NotificationManagerCompat notificationManagerCompat = NotificationManagerCompat.from(getContext());
         notificationManagerCompat.notify(1000, notificationBuilder.build());
     }

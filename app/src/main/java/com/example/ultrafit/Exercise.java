@@ -8,13 +8,15 @@ public class Exercise implements Serializable {
     boolean hasLimitTime;
     int time;
     int repetitions;
+    float calories;
 
-    public Exercise(String name, String videoURL, boolean hasLimitTime, int time, int repetitions) {
+    public Exercise(String name, String videoURL, boolean hasLimitTime, int time, int repetitions, float calories) {
         this.name = name;
         this.videoURL = videoURL;
         this.hasLimitTime = hasLimitTime;
         this.time = time;
         this.repetitions = repetitions;
+        this.calories = calories;
     }
 
     public String getName() {
@@ -55,5 +57,13 @@ public class Exercise implements Serializable {
 
     public void setRepetitions(int repetitions) {
         this.repetitions = repetitions;
+    }
+
+    public float getCalories() {
+        return calories;
+    }
+
+    public void setCalories(float calories) {
+        this.calories = calories;
     }
 }

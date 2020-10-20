@@ -42,7 +42,7 @@ public class ObjectivesHandler {
     public void createPiernasRoutine(){
         Routine piernas = new Routine("Pierna", "pierna", new ArrayList<Exercise>());
         piernas.addExercise(GlobalExercisesList.getInstance().get("Lagartijas"));
-        piernas.addExercise(GlobalExercisesList.getInstance().get("Quesadillas"));
+        piernas.addExercise(GlobalExercisesList.getInstance().get("Saltoestrella"));
         piernas.addExercise(GlobalExercisesList.getInstance().get("Flexiones"));
         piernas.addExercise(GlobalExercisesList.getInstance().get("Plancha"));
         tonificarObjective.add(piernas);

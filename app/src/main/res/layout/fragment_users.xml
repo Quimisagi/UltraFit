@@ -28,9 +28,12 @@
             android:text="Perfil" />
 
         <Switch
+            android:layout_marginTop="10dp"
+            android:background="@color/colorTextEdit"
             android:id="@+id/notifications"
             android:layout_width="match_parent"
             android:layout_height="46dp"
+            android:textColor="@color/colorText"
             android:text="Switch" />
 
     </LinearLayout>

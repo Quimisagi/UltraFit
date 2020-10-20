@@ -44,7 +44,7 @@ public class RegisterActivity extends AppCompatActivity {
         tempUser.setWeight(weight);
         tempUser.setObjective(index);
 
-        DataHandler.saveData(getApplicationContext(), tempUser);
+        DataHandler.saveData(getApplicationContext(), tempUser, "userData.txt");
 
         final Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);

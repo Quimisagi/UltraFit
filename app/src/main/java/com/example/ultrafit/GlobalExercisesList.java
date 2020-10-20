@@ -20,20 +20,20 @@ public class GlobalExercisesList {
     }
 
     public void createExercises(){
-        Exercise lagartijas = new Exercise("Lagartijas", "exercises", false, 0, 10);
+        Exercise lagartijas = new Exercise("Lagartijas", "push", false, 0, 10, 5);
         exercisesHash.put("Lagartijas", lagartijas);
-        Exercise sentadillas = new Exercise("Sentadillas", "exercises", false, 0, 20);
+        Exercise sentadillas = new Exercise("Sentadillas", "air_squat", false, 0, 20, 2.1F);
         exercisesHash.put("Sentadillas", sentadillas);
-        Exercise quesadillas = new Exercise("Salto de estrella", "exercises", true, 120, 0);
-        exercisesHash.put("Quesadillas", quesadillas);
-        Exercise flexiones = new Exercise("Flexiones", "exercises", false, 0, 15);
+        Exercise saltoEstrella = new Exercise("Salto de estrella", "push", true, 120, 0, 1.1F);
+        exercisesHash.put("Saltoestrella", saltoEstrella);
+        Exercise flexiones = new Exercise("Flexiones", "abdominales", false, 0, 15, 2.2F);
         exercisesHash.put("Flexiones", flexiones);
-        Exercise plancha = new Exercise("Plancha", "exercises", true, 80, 0);
+        Exercise plancha = new Exercise("Plancha", "plank", true, 80, 0, 1.2F);
         exercisesHash.put("Plancha", plancha);
-        Exercise abdominales = new Exercise("Abdominales", "exercises", false, 0, 12);
+        Exercise abdominales = new Exercise("Abdominales", "abdominales", false, 0, 12, 2);
         exercisesHash.put("Abdominales", abdominales);
-        Exercise mountainClimber = new Exercise("Mountain Climber", "exercises", false, 0, 15);
-        exercisesHash.put("Mountain", quesadillas);
+        Exercise mountainClimber = new Exercise("Mountain Climber", "air_squat", false, 0, 15, 1.9F);
+        exercisesHash.put("Mountain", mountainClimber);
     }
 
 }
